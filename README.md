@@ -1,8 +1,8 @@
 
-# Clustering Vagrant
-Este é um modelo Vagrantfile que é fácil adicionar **VMs** sobre uma **configuração bem simples**
-que gera nós ou pontos de montagem à medida que o cluster cresce e cada nó pode ser personalizado. 
-Cada servidor pode ser facilmente provisionado com Puppet, Chef, **Ansible** ou um script.
+# Multiple Nodes Vagrant
+Este é um modelo Vagrantfile que é fácil adicionar **VMs** sobre uma **configuração simples**
+que gera nós ou pontos de montagens e cada nó pode ser personalizado. 
+Cada servidor "Maquina" pode ser facilmente provisionado com Puppet, Chef, **Ansible** ou um script.
 
 > **Nota:**
 > *Esse projeto se basease no post: 
@@ -19,11 +19,11 @@ Cada servidor pode ser facilmente provisionado com Puppet, Chef, **Ansible** ou 
 
 2) Clone este projeto para começá-lo a funcionar!
 
-```
-$ git clone https://github.com/alisonbuss/clustering-vagrant/
-$ ls clustering-vagrant
+```bash
+$ git clone https://github.com/alisonbuss/multiple-nodes-vagrant/
+$ ls multiple-nodes-vagrant
 ...
- clustering-vagrant
+ multiple-nodes-vagrant
   |---log/                   'Pasta de arquivos de log'
   |---shared-folder/         'Pasta de compartilhamento da máquina para VM'
   |---shared-folder/text.txt 'Arquivo a ser compartilhado'
@@ -32,14 +32,14 @@ $ ls clustering-vagrant
   |---README.md              'Instruções de uso'
   |---Vagrantfile            'Arquivo vagrant'
 ...
-$ cd clustering-vagrant
+$ cd multiple-nodes-vagrant
 ```
 
 3) Inicialização e SSH
 
     O provedor usando é o **VirtualBox** e é o provedor padrão do Vagrant.
 
-```
+```bash
 $ vagrant up
 ...
 
@@ -53,7 +53,7 @@ $ vagrant ssh ubuntu.example.com
 
 ### **Arquivo Principal** *de configuração para subir instancias de VMs*:
 
-```
+```bash
 $ cat instances.config.rb
 
 =begin ############################################################################
