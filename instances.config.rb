@@ -1,61 +1,3 @@
-
-# Clustering Vagrant
-Este é um modelo Vagrantfile que é fácil adicionar **VMs** sobre uma **configuração bem simples**
-que gera nós ou pontos de montagem à medida que o cluster cresce e cada nó pode ser personalizado. 
-Cada servidor pode ser facilmente provisionado com Puppet, Chef, **Ansible** ou um script.
-
-> **Nota:**
-> *Esse projeto se basease no post: 
-  "[A Vagrantfile template](http://jerematic.com/articles/2015-07/a-vagrantfile-template)" 
-  de Jeremy Steinert* 
->   
-
-## Começando
-
-1) Instalar dependências
-
-* [VirtualBox](https://www.virtualbox.org/) 4.3.10 ou superior..
-* [Vagrant](https://www.vagrantup.com/downloads.html) 1.6.3 ou superior.
-
-2) Clone este projeto para começá-lo a funcionar!
-
-```
-$ git clone https://github.com/alisonbuss/clustering-vagrant/
-$ ls clustering-vagrant
-...
- clustering-vagrant
-  |---log/                   'Pasta de arquivos de log'
-  |---shared-folder/         'Pasta de compartilhamento da máquina para VM'
-  |---shared-folder/text.txt 'Arquivo a ser compartilhado'
-  |---instances.config.rb    'ARQUIVO PRINCIPAL!! onde configura as VM'
-  |---LICENSE                'Licença Pública Geral GNU v3.0'
-  |---README.md              'Instruções de uso'
-  |---Vagrantfile            'Arquivo vagrant'
-...
-$ cd clustering-vagrant
-```
-
-3) Inicialização e SSH
-
-    O provedor usando é o **VirtualBox** e é o provedor padrão do Vagrant.
-
-```
-$ vagrant up
-...
-
-$ vagrant ssh centos.example.com
-...
-
-$ vagrant ssh ubuntu.example.com
-...
-
-```
-
-### **Arquivo Principal** *de configuração para subir instancias de VMs*:
-
-```
-$ cat instances.config.rb
-
 =begin ############################################################################
 
 Instance default values:
@@ -112,4 +54,3 @@ INSTANCES = {
 GLOBAL_SHARED_FOLDERS = [
     {host: "shared-folder/", guest: "/home/shared-folder"}
 ]
-```
