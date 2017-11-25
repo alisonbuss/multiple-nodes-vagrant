@@ -2,7 +2,7 @@
 # Multiple Nodes Vagrant
 Este é um modelo Vagrantfile que é fácil adicionar **VMs** sobre uma **configuração simples**
 que gera nós ou pontos de montagens e cada nó pode ser personalizado. 
-Cada servidor "Maquina" pode ser facilmente provisionado com Puppet, Chef, **Ansible** ou um script.
+Cada servidor "VMs" pode ser facilmente provisionado com Puppet, Chef, **Ansible** ou um script.
 
 > **Nota:**
 > *Esse projeto se basease no post: 
